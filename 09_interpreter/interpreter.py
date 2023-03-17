@@ -1,6 +1,9 @@
 def main():
     n = calculate(input("Please type an expression\n"))
-    print (f"{n:.1f}")
+    try: 
+        print (f"{n:.1f}")
+    except TypeError:
+        pass
 
 
 def calculate(exp):
@@ -28,9 +31,11 @@ def multiply(x, y):
     return x*y
 
 def devide(x, y):
-    if y == 0:
-        return "Null"
-    else:
-        return x/y
+    try:
+         return x/y
+    except ZeroDivisionError:
+         print("division by zero!")
+
+ 
 
 main()
