@@ -18,17 +18,19 @@ def count_due(n):
     return due
 
 def amount_payed():
-    payed = int(input("Insert Coin: " ))
+    while True:
+        try:
+            payed = int(input("Insert Coin: " ))
+        except ValueError:
+            print("Please input coin in the machine")
+        else:
+            break
+        
     if payed == 5 or payed == 10 or payed ==25:
         return payed
     else:
         print("Machine only accepts 5, 10, and 25 cents!")
         return 0
-
-
-
-
-
 
 main()
 
