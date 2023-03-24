@@ -1,14 +1,17 @@
 def main():
     txt  = input()
-    txt_into_list = list(txt.strip(" "))
+    ommit_vowels(txt)
+ 
+
+def ommit_vowels(str):
+    str_into_list = list(str.strip(" "))
     
-    for l in txt_into_list:
+    for index in range(len(str_into_list)):
         for j in ["a", "e", "i", "o", "u"]:
-            if l == j:
-                txt_into_list.remove(l)
+            if str_into_list[index] == j:
+                str_into_list[index]= ""
             else: pass
 
-    print("".join(txt_into_list))
- 
+    print("".join(str_into_list))
 
 main()
