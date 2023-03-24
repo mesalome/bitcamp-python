@@ -13,7 +13,7 @@ def main():
                 print("Too Large!")
                 continue
             elif userInput < guessingNumber:
-                print("Too Littl!")
+                print("Too Little!")
                 continue
             else:
                 print("Just right! ")
