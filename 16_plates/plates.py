@@ -62,5 +62,5 @@ def is_valid(s):
         else:
                 False
 
-
-main()
+if __name__ == "__main__":
+    main()
