@@ -1,7 +1,7 @@
 def main():
     txt  = input()
-    ommit_vowels(txt)
- 
+    onlyCons= ommit_vowels(txt)
+    print(onlyCons)
 
 def ommit_vowels(str):
     str_into_list = list(str.strip(" "))
@@ -12,7 +12,8 @@ def ommit_vowels(str):
                 str_into_list[index]= ""
             else: pass
 
-    print("".join(str_into_list))
+    result = "".join(str_into_list)
+    return result
 
 if __name__ == "__main__":
     main()
