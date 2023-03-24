@@ -1,5 +1,7 @@
 import random
 
+
+    
 def main():
     n = get_level()
     i=10
@@ -11,14 +13,17 @@ def main():
         j=3
         while j>0:
             j-=1
-            print(x, "+", y, "= ", end="")
-            if check_user_input(solution):
-                break
-            elif j==0:
-                print("EEE")
-                print(x, "+", y, "= ", solution)
-            else:
-                print("EEE")
+            try:
+                print(x, "+", y, "= ", end="")
+                if check_user_input(solution):
+                    break
+                elif j==0:
+                    print("EEE")
+                    print(x, "+", y, "= ", solution)
+                else:
+                    print("EEE")
+            except ValueError:
+                pass
 
 def get_level():
     while True:
@@ -55,6 +60,5 @@ def check_user_input(solution):
      if userInput == solution:
         return True
 
-     
 if __name__ == "__main__":
     main()
