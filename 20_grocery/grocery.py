@@ -4,8 +4,6 @@ def main():
     print_item(orderedList)
 
 
-
-
 def grocery_list():
     userList = []
     while True:
@@ -19,8 +17,8 @@ def grocery_list():
 def ordered_list(grocery):
     sortedGrocery = sorted(grocery)
     orderedList =[]
-    for item in sortedGrocery :
-        index = sortedGrocery .index(item)
+    for item in sortedGrocery:
+        index = sortedGrocery.index(item)
         numberedItem = str(index+1)+" "+ item
         orderedList.append(numberedItem)
     return orderedList
