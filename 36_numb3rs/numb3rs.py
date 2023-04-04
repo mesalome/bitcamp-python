@@ -11,8 +11,8 @@ def validate(ip):
     if matches:
             first = matches.group(1)
             second = matches.group(2)
-            third = matches.group(1)
-            fourth = matches.group(2)
+            third = matches.group(3)
+            fourth = matches.group(4)
             if int(first)<=255 and int(second)<=255 and int(third)<=255 and int(fourth)<=255:
                 return True
             else: 
