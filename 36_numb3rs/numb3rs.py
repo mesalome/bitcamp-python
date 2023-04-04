@@ -7,7 +7,7 @@ def main():
 
 
 def validate(ip):
-    matches = re.search(r"^(\d{0,3})\.(\d{0,3})\.(\d{0,3})\.(\d{0,3})$", ip)
+    matches = re.search(r"^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$", ip)
     if matches:
             first = matches.group(1)
             second = matches.group(2)
