@@ -13,8 +13,6 @@ def parse(s):
         return f"https://youtu.be/{url}"
     except AttributeError:
         return None
-    
-
 
 
 if __name__ == "__main__":
