@@ -15,7 +15,7 @@ def convert(s):
         finishTime = general_time(finishMeridiem, finishHour, finishMinutes)
         return f"{startTime} to {finishTime}"
     except:
-        raise ValueError
+        raise ValueError("ValueError has occured")
 
     
 
