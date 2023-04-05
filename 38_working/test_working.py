@@ -1,8 +1,12 @@
 import working
+import pytest
 
 
 def main():
     test_general_time()
+    test_convert()
+    test_invalid_time()
+    test_invalid_space()
 
 
 
@@ -20,9 +24,13 @@ def test_convert():
     assert working.convert("10 PM to 8 AM") == "22:00 to 08:00"
     assert working.convert("10:30 PM to 8:50 AM") == "22:30 to 08:50"
  
-    
-    
-    
+def test_invalid_time():
+    with pytest.raises(ValueError):
+        working.convert("13:00 AM - 2:00 PM")
+
+def test_invalid_space():
+    with pytest.raises(ValueError):
+        working.convert("13:00AM to 2:00PM")
 
 if __name__ == "__main__":
     main()
