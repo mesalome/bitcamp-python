@@ -5,7 +5,11 @@ def test_init():
     jar = Jar()
     jar.capacity == 12
     jar.size == 0
-    
+
+def test_init_invalid_capacity():
+    with pytest.raises(ValueError):
+        jar = Jar(-1)
+
 def test_str():
     jar = Jar()
     assert str(jar) == ""
