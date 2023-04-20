@@ -37,8 +37,6 @@ to advance software I can add additional functions:
         <!-- for a better visualization check diagram: -->
         ![image](https://upload.wikimedia.org/wikipedia/en/c/cc/Rock_paper_scissors_lizard_spock.png)
 
-
 ## Coding Process
- ### beginning version
-    for the beginning version I only needed two additional libraries: Random and Re
-    
+### beginning version
+for the beginning version I only needed two additional libraries: __Random__ and __Re__
