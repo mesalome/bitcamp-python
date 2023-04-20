@@ -8,18 +8,21 @@ class Shoot(IntEnum):
     Paper = 1
     Scissors = 2
 
-#after first game user will be asked if they want to keep playing or quit
 #if user writes something other than given 3 actions, they will be notified to fix it.
+#after first game user will be asked if they want to keep playing or quit
 #loop will be over if user press any other character than Y
 def main():
     while True:
         try:
-            # if match(user_input(), computer_input()) != None:
-            print(match(user_input(), computer_input()))
+            userInput = user_input()
         except TypeError:
             print("Please write one of three possible actions")
             pass
         else:
+            computerInput = computer_input()
+            match_shoots_output(userInput, computerInput)
+            result = match_result(userInput, computerInput)
+            print(result)
             question = input("If you want to keep playing press Y. To quit press any other character ")
             if re.match("^[Y]{1}$", question, re.IGNORECASE):
                 continue
@@ -42,21 +45,22 @@ def user_input():
 
 # computer's action is chosen randomly from list [0, 1, 2]
 def computer_input():
-    return random.choice(range(3))
+    return random.choice(range(len(Shoot)))
 
 
 #basic matching rules
 # Rock beats Scissors
 # Paper beats Rock
 # Scissors beats Paper
-def match(user_input, computer_input):
+
+def match_shoots_output(user_input, computer_input):
     shoots = ["Rock", "Paper", "Scissors"]
-
-        #user's choice output on screen
+    #user's choice output on screen
     print("User played: ", shoots[user_input])
-
-        #computer's choice output on screen
+    #computer's choice output on screen
     print("Computer played ", shoots[computer_input])
+
+def match_result(user_input, computer_input):
     if user_input == computer_input:
         return "It's a tie"
     elif user_input == Shoot.Rock:
