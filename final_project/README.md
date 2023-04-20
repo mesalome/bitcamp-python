@@ -53,3 +53,6 @@ to advance software I can add additional functions:
 2. while loop to keep playing until user exits on their choice
 
 #### advanced version 2.1
+1. because code will became way harder to read with additional actions, I'll add class __IntEnum__ from __enum__
+    which will make code readable 
+2. 
