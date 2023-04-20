@@ -55,4 +55,8 @@ to advance software I can add additional functions:
 #### advanced version 2.1
 1. because code will became way harder to read with additional actions, I'll add class __IntEnum__ from __enum__
     which will make code readable 
-2. 
+2. I've split match(user_input, computer_input) function into two functions: 
+    * match_shoots_output(user_input, computer_input) - which outputs user's and computer's shoots
+    * match_result(user_input, computer_input) - which match shoots and determines winner
+this made code in my opinion easier to read
+3. 

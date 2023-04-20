@@ -15,15 +15,14 @@ def main():
     while True:
         try:
             userInput = user_input()
-        except TypeError:
-            print("Please write one of three possible actions")
-            pass
-        else:
             computerInput = computer_input()
             match_shoots_output(userInput, computerInput)
+        except TypeError:
+            print("Please write one of three possible actions")
+        else:
             result = match_result(userInput, computerInput)
             print(result)
-            question = input("If you want to keep playing press Y. To quit press any other character ")
+            question = input("If you want to keep playing press Y. (To quit press any other character) ")
             if re.match("^[Y]{1}$", question, re.IGNORECASE):
                 continue
             else:
