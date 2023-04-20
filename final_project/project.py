@@ -34,8 +34,7 @@ def user_input():
 def computer_input():
     return random.choice(range(3))
 
-# def matching_rules():
-
+#matching rules
     # Rock beats Scissors
     # Paper beats Rock
     # Scissors beats Paper

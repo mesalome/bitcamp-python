@@ -38,5 +38,18 @@ to advance software I can add additional functions:
         ![image](https://upload.wikimedia.org/wikipedia/en/c/cc/Rock_paper_scissors_lizard_spock.png)
 
 ## Coding Process
-### beginning version
-for the beginning version I only needed two additional libraries: __Random__ and __Re__
+### beginning version 1.0
+1. for the beginning version I only need one additional library: __Random__  
+    *   __Random__ for computer's random action
+2. three different function
+    * user_input() - which will get action and change it into 0, 1, or 2
+    * computer_input() - which will generate random number 0, 1, or 2
+    * match(user_input, computer_input) - function with two parameters to decide winner according to Rules
+
+### advanced version
+#### advanced version 2.0
+1. for the advanced version I need to add library: __Re__
+    * __Re__ for checking user's input and if it maches "Y" or "y" to exit game
+2. while loop to keep playing until user exits on their choice
+
+#### advanced version 2.1
