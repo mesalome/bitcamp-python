@@ -21,6 +21,7 @@ to advance software I can add additional functions:
 2. quit game if they press anything other than Y
 3. make game much more COMPLICATED by adding additional actions: Lizard and Spock
 
+
     ### rock, paper, scissors, lizard, Spock Rules
 
         * Rock beats Scissors
@@ -36,6 +37,7 @@ to advance software I can add additional functions:
 
         <!-- for a better visualization check diagram: -->
         ![image](https://upload.wikimedia.org/wikipedia/en/c/cc/Rock_paper_scissors_lizard_spock.png)
+4. count user's and computer's scores and display them after every game
 
 ## Coding Process
 ### beginning version 1.0
@@ -77,3 +79,8 @@ else: computer_input is not neither rock nor scissors, than it is paper and comp
    * index_to_text(index)
 
 4. it's time to add additional shooting __Lizard__ and __Spock__ in the class, dict, user_input() and index_to_text() function's list. there is no need to change anything else. 
+
+#### advanced version 2.3
+1. added counters - global variables and incrementing functions 
+    * increment_user_score() - increments global variable User_Score_Count
+    * increment_computer_score() - increments global variable Computer_Score_Count
