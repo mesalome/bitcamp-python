@@ -50,10 +50,6 @@ def computer_input():
     return random.choice(range(len(Shoot)))
 
 
-#basic matching rules
-# Rock beats Scissors
-# Paper beats Rock
-# Scissors beats Paper
 def index_to_text(index):
     shoots = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
     return shoots[index]
@@ -73,8 +69,6 @@ def match_result(user_input, computer_input):
         Shoot.Spock: [Shoot.Rock, Shoot.Scissors], #Spock beats Rock and Scissors
     }
     user_win = winning[user_input]
-    print(winning[user_input])
-    print(computer_input)
     if user_input == computer_input:
         return "It's a tie"
     elif computer_input in user_win:
