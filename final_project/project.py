@@ -18,16 +18,16 @@ Computer_Score_Count = 0
 def main():
     while True:
         try:
-            userInput = user_input()
+            userInputEncrypted = user_input_encrypt(input("Rock, Paper, Scissors, Lizard or Spock?: "))
             computerInput = computer_input()
-            match_shoots_output(userInput, computerInput)
+            match_shoots_output(userInputEncrypted, computerInput)
         except TypeError:
-            print("Please write one of three possible actions")
+            pass
         else:
-            result = match_result(userInput, computerInput)
+            result = match_result(userInputEncrypted, computerInput)
             print(result)
             print(f"User vs Computer - {User_Score_Count}:{Computer_Score_Count}")
-            question = input("If you want to keep playing press Y. (To quit press any other character) ")
+            question = input("If you want to keep playing type Y. (To quit type any other character) ")
             if re.match("^[Y]{1}$", question, re.IGNORECASE):
                 continue
             else:
@@ -40,20 +40,21 @@ def main():
 # lizard is 3 same as Shoot.Lizard
 # spock is 4 same as Shoot.Spock
 
-def user_input():
-    myinput = input("Rock, Paper, Scissors, Lizard or Spock?: ").lower()
-    if myinput == "rock":
+def user_input_encrypt(userInput):
+    if userInput.lower() == "rock":
         return Shoot.Rock
-    if myinput == "paper":
+    elif userInput.lower() == "paper":
         return Shoot.Paper
-    if myinput == "scissors":
+    elif userInput.lower() == "scissors":
         return Shoot.Scissors
-    if myinput == "lizard":
+    elif userInput.lower() == "lizard":
         return Shoot.Lizard
-    if myinput == "spock":
+    elif userInput.lower() == "spock":
         return Shoot.Spock
-
-
+    else:
+        print("Please write one of the five possible actions")
+        
+        
 # computer's action is chosen randomly from list [0, 1, 2]
 def computer_input():
     return random.choice(range(len(Shoot)))
@@ -65,9 +66,9 @@ def index_to_text(index):
 
 def match_shoots_output(user_input, computer_input):
     #user's choice output on screen
-    print("User played: ", index_to_text(user_input))
+    print("User played:", index_to_text(user_input))
     #computer's choice output on screen
-    print("Computer played ", index_to_text(computer_input))
+    print("Computer played:", index_to_text(computer_input))
 
 def match_result(user_input, computer_input):
     winning = {
