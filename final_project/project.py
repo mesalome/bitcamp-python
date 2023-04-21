@@ -7,6 +7,8 @@ class Shoot(IntEnum):
     Rock = 0
     Paper = 1
     Scissors = 2
+    Lizard = 3
+    Spock = 4
 
 #if user writes something other than given 3 actions, they will be notified to fix it.
 #after first game user will be asked if they want to keep playing or quit
@@ -22,6 +24,7 @@ def main():
         else:
             result = match_result(userInput, computerInput)
             print(result)
+            
             question = input("If you want to keep playing press Y. (To quit press any other character) ")
             if re.match("^[Y]{1}$", question, re.IGNORECASE):
                 continue
@@ -51,34 +54,34 @@ def computer_input():
 # Rock beats Scissors
 # Paper beats Rock
 # Scissors beats Paper
+def index_to_text(index):
+    shoots = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+    return shoots[index]
 
 def match_shoots_output(user_input, computer_input):
-    shoots = ["Rock", "Paper", "Scissors"]
     #user's choice output on screen
-    print("User played: ", shoots[user_input])
+    print("User played: ", index_to_text(user_input))
     #computer's choice output on screen
-    print("Computer played ", shoots[computer_input])
+    print("Computer played ", index_to_text(computer_input))
 
 def match_result(user_input, computer_input):
+    winning = {
+        Shoot.Rock: [Shoot.Scissors, Shoot.Lizard], #rock beats scissors and lizard
+        Shoot.Paper: [Shoot.Rock, Shoot.Spock],    #paper beats rock and spock
+        Shoot.Scissors: [Shoot.Paper, Shoot.Lizard], #scissors beats paper and lizard
+        Shoot.Lizard: [Shoot.Paper, Shoot.Spock], #Lizard beats paper and spock
+        Shoot.Spock: [Shoot.Rock, Shoot.Scissors], #Spock beats Rock and Scissors
+    }
+    user_win = winning[user_input]
+    print(winning[user_input])
+    print(computer_input)
     if user_input == computer_input:
         return "It's a tie"
-    elif user_input == Shoot.Rock:
-        if  computer_input == Shoot.Paper:
-            return "You Lost!, Papper beats Rock"
-        elif computer_input == Shoot.Scissors:
-            return "You Won!, Rock beats Scissors"
-    elif user_input == Shoot.Paper: 
-        if computer_input == Shoot.Rock:
-            return "You Won, Papper beats Rock"
-        elif computer_input == Shoot.Scissors:
-            return "You Lost, Scissors beats Paper"
-    elif user_input == Shoot.Scissors:
-        if computer_input == Shoot.Paper:
-            return "You Won, Scissors beats Paper"
-        elif computer_input == Shoot.Rock:
-            return "You Lost, Rock beats Scissors"
-    
-    
+    elif computer_input in user_win:
+        return f"You Won!, {index_to_text(user_input)} beats {index_to_text(computer_input)}"
+    else:
+        return f"You Lost, {index_to_text(computer_input)} beats {index_to_text(user_input)}"
+
 
 if __name__ == "__main__":
     main()
