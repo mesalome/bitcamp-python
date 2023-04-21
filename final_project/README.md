@@ -76,4 +76,4 @@ else: computer_input is not neither rock nor scissors, than it is paper and comp
 3. because I'm changing user's input into numbers, I've needed way to change them (and computer's output as well) into texts to print them so, user could see their and computer's choices and also final result, to do this I've created another funtion 
    * index_to_text(index)
 
-4. it's time to add additional shooting __Lizard__ and __Spock__ in the class, dict and index_to_text() function's list. there is no need to change anything else. 
+4. it's time to add additional shooting __Lizard__ and __Spock__ in the class, dict, user_input() and index_to_text() function's list. there is no need to change anything else. 

@@ -35,14 +35,21 @@ def main():
 # rock is 0, same as Shoot.Rock
 # paper is 1 same as Shoot.Paper
 # scissors is 2 same as Shoot.Scissors
+# lizard is 3 same as Shoot.Lizard
+# spock is 4 same as Shoot.Spock
+
 def user_input():
-    myinput = input("Rock, Paper or Scissors?: ").lower()
+    myinput = input("Rock, Paper, Scissors, Lizard or Spock?: ").lower()
     if myinput == "rock":
         return Shoot.Rock
     if myinput == "paper":
         return Shoot.Paper
     if myinput == "scissors":
         return Shoot.Scissors
+    if myinput == "lizard":
+        return Shoot.Lizard
+    if myinput == "spock":
+        return Shoot.Spock
 
 
 # computer's action is chosen randomly from list [0, 1, 2]
