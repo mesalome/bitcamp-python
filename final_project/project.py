@@ -10,6 +10,8 @@ class Shoot(IntEnum):
     Lizard = 3
     Spock = 4
 
+User_Score_Count = 0
+Computer_Score_Count = 0
 #if user writes something other than given 3 actions, they will be notified to fix it.
 #after first game user will be asked if they want to keep playing or quit
 #loop will be over if user press any other character than Y
@@ -24,7 +26,7 @@ def main():
         else:
             result = match_result(userInput, computerInput)
             print(result)
-            
+            print(f"User vs Computer - {User_Score_Count}:{Computer_Score_Count}")
             question = input("If you want to keep playing press Y. (To quit press any other character) ")
             if re.match("^[Y]{1}$", question, re.IGNORECASE):
                 continue
@@ -79,10 +81,19 @@ def match_result(user_input, computer_input):
     if user_input == computer_input:
         return "It's a tie"
     elif computer_input in user_win:
+        increment_user_score()
         return f"You Won!, {index_to_text(user_input)} beats {index_to_text(computer_input)}"
     else:
+        increment_computer_score()
         return f"You Lost, {index_to_text(computer_input)} beats {index_to_text(user_input)}"
 
+def increment_user_score():
+    global User_Score_Count
+    User_Score_Count += 1
+
+def increment_computer_score():
+    global Computer_Score_Count
+    Computer_Score_Count += 1
 
 if __name__ == "__main__":
     main()
