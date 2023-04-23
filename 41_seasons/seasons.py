@@ -25,8 +25,10 @@ def days_passed(customDate, today):
     userDateFormat = date.fromisoformat(customDate)
     daysPassed = abs(today-userDateFormat).days
     return daysPassed
+
 def days_to_minutes(days):
     return days*24*60
+
 def read_numbers(number):
     txtNumber = inflect.engine().number_to_words(f"{number}", andword="")
     return txtNumber.capitalize()
