@@ -51,6 +51,7 @@ def split_by_space(date):
     for i in range(len(months)):
         if old_month == months[i]:
             month = i + 1
+            break
     return year, month, day
 
 def split_by_dash(year, month, day):
